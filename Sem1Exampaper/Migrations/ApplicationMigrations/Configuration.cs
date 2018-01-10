@@ -31,25 +31,41 @@ namespace Sem1Exampaper.Migrations.ApplicationMigrations
 
 
 
-            //ApplicationUser lecturer = manager.FindById("S001");
-            //if (lecturer != null)
-            //{
-            //    manager.AddToRoles(lecturer.Id, new string[] { "Lecturer" });
-            //}
-            //else
-            //{
-            //    throw new Exception { Source = "Did not find user" };
-            //}
+            context.Users.AddOrUpdate(u => u.Email, new ApplicationUser
+            {
+                UserName = "einstein.albert@itsligo.ie",
+                Email = "einstein.albert@itsligo.ie",
+                PasswordHash = new PasswordHasher().HashPassword("ITSligo$1")
+            });
 
-            //ApplicationUser member = manager.FindByEmail("blogs.joe@itsligo.ie");
-            //if (member != null)
-            //{
-            //    manager.AddToRoles(member.Id, new string[] { "Member" });
-            //}
-            //else
-            //{
-            //    throw new Exception { Source = "Did not find user" };
-            //}
+            context.Users.AddOrUpdate(u => u.Email, new ApplicationUser
+            {
+                UserName = "blogs.joe@itsligo.ie",
+                Email = "blogs.joe@itsligo.ie",
+                PasswordHash = new PasswordHasher().HashPassword("ITSligo$2")
+            });
+
+
+
+            ApplicationUser lecturer = manager.FindByEmail("einstein.albert@itsligo.ie");
+            if (lecturer != null)
+            {
+                manager.AddToRoles(lecturer.Id, new string[] { "Lecturer" });
+            }
+            else
+            {
+                throw new Exception { Source = "Did not find user" };
+            }
+
+            ApplicationUser student = manager.FindByEmail("blogs.joe@itsligo.ie");
+            if (student != null)
+            {
+                manager.AddToRoles(student.Id, new string[] { "Student" });
+            }
+            else
+            {
+                throw new Exception { Source = "Did not find user" };
+            }
         }
     }
 }

@@ -10,6 +10,7 @@ using Sem1Exampaper.Models.AttendModels;
 
 namespace Sem1Exampaper.Controllers
 {
+    [Authorize(Roles = "Lecturer")]
     public class AttendanceEntryController : Controller
     {
         private AttendDbContext db = new AttendDbContext();
