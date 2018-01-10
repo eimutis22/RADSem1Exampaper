@@ -10,7 +10,7 @@ namespace Sem1Exampaper.Migrations.ApplicationMigrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            MigrationsDirectory = @"Migrations\AttendMigrations";
+            MigrationsDirectory = @"Migrations\ApplicationMigrations";
         }
 
         protected override void Seed(Sem1Exampaper.Models.ApplicationDbContext context)

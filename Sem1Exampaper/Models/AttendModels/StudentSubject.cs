@@ -11,10 +11,12 @@ namespace Sem1Exampaper.Models.AttendModels
     public class StudentSubject
     {
         [Key, Column(Order = 1)]
+        [ForeignKey("assocStudent")]
         [Display(Name = "Student ID")]
         public string StudentID { get; set; }
 
         [Key, Column(Order = 2)]
+        [ForeignKey("assocSubject")]
         [Display(Name = "Subject ID")]
         public int SubjectID { get; set; }
 

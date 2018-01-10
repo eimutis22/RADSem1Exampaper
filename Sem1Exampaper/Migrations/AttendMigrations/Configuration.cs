@@ -1,5 +1,6 @@
 namespace Sem1Exampaper.Migrations.AttendMigrations
 {
+    using Sem1Exampaper.Models.AttendModels;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -13,20 +14,39 @@ namespace Sem1Exampaper.Migrations.AttendMigrations
             MigrationsDirectory = @"Migrations\AttendMigrations";
         }
 
-        protected override void Seed(Sem1Exampaper.Models.AttendModels.AttendDbContext context)
+        protected override void Seed(Sem1Exampaper.Models.AttendModels.AttendDbContext c)
         {
-            //  This method will be called after migrating to the latest version.
+            //SeedSubjects(c);
+            //SeedStudents(c);
+            //SeedStudentSubjects(c);
+        }
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+        private void SeedStudentSubjects(AttendDbContext c)
+        {
+            c.StudentSubjects.AddOrUpdate(
+                new StudentSubject { StudentID = "S001", SubjectID = 1 },
+                new StudentSubject { StudentID = "S001", SubjectID = 2 },             
+                new StudentSubject { StudentID = "S002", SubjectID = 1 },
+                new StudentSubject { StudentID = "S002", SubjectID = 2 }
+            );
+        }
+
+        private void SeedStudents(AttendDbContext c)
+        {
+            c.Students.AddOrUpdate(s => s.StudentID,
+                new Student { StudentID = "S001", FirstName = "John", LastName = "Smith" },
+                new Student { StudentID = "S002", FirstName = "Mary", LastName = "Bloggs" }
+            );
+        }
+
+        private void SeedSubjects(AttendDbContext c)
+        {
+            c.Subjects.AddOrUpdate(
+                p => p.SubjectID,
+                new Subject { SubjectName = "Software Development" },
+                new Subject { SubjectName = "Maths" },
+                new Subject { SubjectName = "Databases" }
+            );
         }
     }
 }

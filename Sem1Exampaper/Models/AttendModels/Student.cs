@@ -11,8 +11,9 @@ namespace Sem1Exampaper.Models.AttendModels
     public class Student
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string StudentID { get; set; }
+        [Display(Name = "Student ID")]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public string StudentID { get; set; } 
 
         [Display(Name = "First Name")]
         public string FirstName { get; set; }

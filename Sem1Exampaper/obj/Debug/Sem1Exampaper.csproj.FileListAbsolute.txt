@@ -71,3 +71,4 @@ C:\Users\Eimutis\Desktop\RADSem1Exampaper\RADSem1Exampaper\Sem1Exampaper\obj\Deb
 C:\Users\Eimutis\Desktop\RADSem1Exampaper\RADSem1Exampaper\Sem1Exampaper\obj\Debug\Sem1Exampaper.Migrations.ApplicationMigrations.Initial.resources
 C:\Users\Eimutis\Desktop\RADSem1Exampaper\RADSem1Exampaper\Sem1Exampaper\obj\Debug\Sem1Exampaper.csproj.GenerateResource.Cache
 C:\Users\Eimutis\Desktop\RADSem1Exampaper\RADSem1Exampaper\Sem1Exampaper\obj\Debug\Sem1Exampaper.Migrations.AttendMigrations.Initial.resources
+C:\Users\Eimutis\Desktop\RADSem1Exampaper\RADSem1Exampaper\Sem1Exampaper\obj\Debug\Sem1Exampaper.Migrations.AttendMigrations.ModStudentID.resources

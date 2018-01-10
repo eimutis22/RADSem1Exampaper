@@ -195,14 +195,18 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\ApplicationMigrations\Configuration.cs" />
-    <Compile Include="Migrations\AttendMigrations\201801092110483_Initial.cs" />
-    <Compile Include="Migrations\AttendMigrations\201801092110483_Initial.Designer.cs">
-      <DependentUpon>201801092110483_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\ApplicationMigrations\201801101139408_Initial.cs" />
+    <Compile Include="Migrations\ApplicationMigrations\201801101139408_Initial.Designer.cs">
+      <DependentUpon>201801101139408_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\AttendMigrations\201801092126348_Initial.cs" />
-    <Compile Include="Migrations\AttendMigrations\201801092126348_Initial.Designer.cs">
-      <DependentUpon>201801092126348_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\ApplicationMigrations\Configuration.cs" />
+    <Compile Include="Migrations\AttendMigrations\201801101140005_Initial.cs" />
+    <Compile Include="Migrations\AttendMigrations\201801101140005_Initial.Designer.cs">
+      <DependentUpon>201801101140005_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\AttendMigrations\201801101201418_Mod StudentID.cs" />
+    <Compile Include="Migrations\AttendMigrations\201801101201418_Mod StudentID.Designer.cs">
+      <DependentUpon>201801101201418_Mod StudentID.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\AttendMigrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -291,11 +295,14 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\AttendMigrations\201801092110483_Initial.resx">
-      <DependentUpon>201801092110483_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\ApplicationMigrations\201801101139408_Initial.resx">
+      <DependentUpon>201801101139408_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\AttendMigrations\201801092126348_Initial.resx">
-      <DependentUpon>201801092126348_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\AttendMigrations\201801101140005_Initial.resx">
+      <DependentUpon>201801101140005_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\AttendMigrations\201801101201418_Mod StudentID.resx">
+      <DependentUpon>201801101201418_Mod StudentID.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
