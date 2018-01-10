@@ -1,5 +1,8 @@
 namespace Sem1Exampaper.Migrations.ApplicationMigrations
 {
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using Sem1Exampaper.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -15,18 +18,38 @@ namespace Sem1Exampaper.Migrations.ApplicationMigrations
 
         protected override void Seed(Sem1Exampaper.Models.ApplicationDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            var manager =
+                 new UserManager<ApplicationUser>(
+                     new UserStore<ApplicationUser>(context));
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            var roleManager =
+                new RoleManager<IdentityRole>(
+                    new RoleStore<IdentityRole>(context));
+
+            roleManager.Create(new IdentityRole { Name = "Lecturer" });
+            roleManager.Create(new IdentityRole { Name = "Student" });
+
+
+
+            //ApplicationUser lecturer = manager.FindById("S001");
+            //if (lecturer != null)
+            //{
+            //    manager.AddToRoles(lecturer.Id, new string[] { "Lecturer" });
+            //}
+            //else
+            //{
+            //    throw new Exception { Source = "Did not find user" };
+            //}
+
+            //ApplicationUser member = manager.FindByEmail("blogs.joe@itsligo.ie");
+            //if (member != null)
+            //{
+            //    manager.AddToRoles(member.Id, new string[] { "Member" });
+            //}
+            //else
+            //{
+            //    throw new Exception { Source = "Did not find user" };
+            //}
         }
     }
 }

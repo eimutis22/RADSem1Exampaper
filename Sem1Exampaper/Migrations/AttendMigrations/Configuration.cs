@@ -19,6 +19,33 @@ namespace Sem1Exampaper.Migrations.AttendMigrations
             //SeedSubjects(c);
             //SeedStudents(c);
             //SeedStudentSubjects(c);
+            //SeedLecturers(c);
+            //SeedAttendances(c);
+        }
+
+
+
+        private void SeedAttendances(AttendDbContext c)
+        {
+            c.Attendances.AddOrUpdate(a => a.AttendanceID,
+                new Attendance { StudentID = "S001", SubjectID = 1, Present = true, AttendanceDate = DateTime.Now},
+                new Attendance { StudentID = "S001", SubjectID = 2, Present = false, AttendanceDate = DateTime.Now},
+                new Attendance { StudentID = "S002", SubjectID = 1, Present = true, AttendanceDate = DateTime.Now},
+                new Attendance { StudentID = "S002", SubjectID = 2, Present = true, AttendanceDate = DateTime.Now}
+            );
+        }
+
+        private void SeedLecturers(AttendDbContext c)
+        {
+            c.Lecturers.AddOrUpdate( l => l.LecturerID,
+                new Lecturer { LecturerName = "Patrick" },
+                new Lecturer { LecturerName = "Jimmy" }
+            );
+
+            c.LecturerSubjects.AddOrUpdate(
+                new LecturerSubject { LecturerID = 1, SubjectID = 1 },
+                new LecturerSubject { LecturerID = 2, SubjectID = 2 }
+            );
         }
 
         private void SeedStudentSubjects(AttendDbContext c)
