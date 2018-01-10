@@ -17,7 +17,25 @@ namespace Sem1Exampaper.Controllers
         // GET: Students
         public ActionResult Index(string searching)
         {
-            return View(db.Students.Where(x => x.FirstName.Contains(searching) || searching == null).ToList());
+            string fName = null, lName = null;
+            string[] fullName = new string[2];
+
+            if(searching != null)
+                if (searching.Contains(" "))
+                {
+                    fullName = searching.Split(' ');
+                    fName = fullName[0];
+                    lName = fullName[1];
+                    return View(db.Students.Where(x => (x.FirstName.Contains(fName) && 
+                                                        x.LastName.Contains(lName)) || 
+                                                        x.FirstName.Contains(searching) || 
+                                                        x.LastName.Contains(searching) || 
+                                                        searching == null).ToList());
+                }
+
+            return View(db.Students.Where(x =>  x.FirstName.Contains(searching) || 
+                                                x.LastName.Contains(searching) || 
+                                                searching == null).ToList());
             //return View(db.Students.ToList());
         }
 
